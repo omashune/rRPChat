@@ -20,7 +20,7 @@ public final class Utils {
 
     public static List<Player> getNearbyPlayers(Player player, int range) {
         return Bukkit.getOnlinePlayers().parallelStream()
-                .filter(p -> p.getLocation().distanceSquared(player.getLocation()) <= range * range)
+                .filter(p -> p.getWorld().equals(player.getWorld()) && p.getLocation().distanceSquared(player.getLocation()) <= range * range)
                 .collect(Collectors.toList());
     }
 
