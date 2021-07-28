@@ -23,7 +23,7 @@ public class DoCommand extends Command {
         if (!(sender instanceof Player)) return true;
 
         if (args.length < 1) {
-            sender.sendMessage(config.getString("usage"));
+            sender.sendMessage(Utils.parseColors(config.getString("usage")));
             return true;
         }
 
@@ -32,7 +32,7 @@ public class DoCommand extends Command {
                 .replace("%action%", Utils.extractMessage(args));
 
         Utils.getNearbyPlayers((Player) sender, config.getInt("radius"))
-                .forEach(p -> p.sendMessage(message));
+                .forEach(p -> p.sendMessage(Utils.parseColors(message)));
         return false;
     }
 
