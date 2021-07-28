@@ -1,7 +1,7 @@
 name: rRPChat
 version: ${project.version}
 main: ru.rey.rrpchat.Core
-api-version: 1.16
+api-version: 1.13
 authors: [ omashune ]
 description: Plugin that adds RP commands
 website: https://github.com/omashune

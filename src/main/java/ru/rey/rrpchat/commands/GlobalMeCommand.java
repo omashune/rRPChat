@@ -24,7 +24,7 @@ public class GlobalMeCommand extends Command {
         if (!(sender instanceof Player)) return true;
 
         if (args.length < 1) {
-            sender.sendMessage(config.getString("usage"));
+            sender.sendMessage(Utils.parseColors(config.getString("usage")));
             return true;
         }
 
@@ -32,7 +32,7 @@ public class GlobalMeCommand extends Command {
                 .replace("%sender%", sender.getName())
                 .replace("%message%", Utils.extractMessage(args));
 
-        Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage(message));
+        Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage(Utils.parseColors(message)));
         return false;
     }
 

@@ -31,7 +31,7 @@ public class CoinCommand extends Command {
                 .replace("%result%", result);
 
         Utils.getNearbyPlayers((Player) sender, config.getInt("radius"))
-                .forEach(p -> p.sendMessage(message));
+                .forEach(p -> p.sendMessage(Utils.parseColors(message)));
         return false;
     }
 
